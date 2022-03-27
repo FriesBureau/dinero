@@ -1,0 +1,30 @@
+.mat-card {
+	display: flex;
+	flex-flow: column;
+	max-width: 100%;
+	min-width: 600px;
+	width: 50vw;
+	border-radius: 0;
+	padding: 0;
+	box-shadow: 0 0 50px rgb(255 255 255 / 60%);
+	@media (max-width: 767px) {
+		width: calc(100% - 10vw);
+		flex-wrap: wrap;
+		min-width: auto;
+		transition: all .5s;
+	}
+	.mat-card-header {
+		padding: 12px;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.mat-card-header-text {
+		display: none;
+	}
+	.mat-card-content {
+		display: flex;
+		min-height: 400px;
+		background: black;
+		padding: 3rem 0;
+	}
+}

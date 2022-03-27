@@ -1,0 +1,35 @@
+<div class="universe">
+    <img class="galaxy" src="assets/background.png" alt="Universe" />
+    <mat-card class="mat-elevation-z20">
+        <mat-card-header>
+            <img class="trooper" src="assets/stormtrooper-icon.svg" alt="Storm Trooper" />{{planetData?.name}}
+        </mat-card-header>
+        <mat-card-content>
+            <div class="list">
+                <div class="text-block">
+                    <span class="planet-subtitle">Navn</span>
+                    <span class="planet-text">{{planetData.name}}</span>
+                </div>
+                <div class="text-block">
+                    <span class="planet-subtitle">Diameter (I km)</span>
+                    <span class="planet-text">{{formatData(planetData.diameter) | number:'2.0':'da'}}</span>
+                </div>
+                <div class="text-block">
+                    <span class="planet-subtitle">Tyngdekraft</span>
+                    <span class="planet-text">{{formatData(planetData?.gravity)}}</span>
+                </div>
+                <div class="text-block">
+                    <span class="planet-subtitle">Terræn</span>
+                    <span class="planet-text">{{formatData(planetData?.terrain)}}</span>
+                </div>
+                <div class="text-block">
+                    <span class="planet-subtitle">Beboer antal</span>
+                    <span class="planet-text">{{formatData(planetData?.population)| number:'2.0':'da'}}</span>
+                </div>
+            </div>
+            <div class="planet">
+                <img src="assets/planet.png" />
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

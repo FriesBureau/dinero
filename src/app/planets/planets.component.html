@@ -1,0 +1,23 @@
+<div class="table-wrapper">
+    <mat-table [dataSource]="tableData" matSort>
+        <ng-container matColumnDef="{{ displayedColumns[i] }}"
+            *ngFor="let headerCellValue of displayedHeader ;let i = index">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>{{ headerCellValue }}
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row"><span matTooltip="{{ isArray(row[displayedColumns[i]]) }}">{{
+                    isArray(row[displayedColumns[i]]) }}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="footerPagination">
+            <mat-footer-cell *matFooterCellDef="let element">
+                <mat-paginator [length]="pageLength" [pageSize]="pageSize" (page)="changePageClick($event)"
+                    aria-label="Select page">
+                </mat-paginator>
+            </mat-footer-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row #row *matRowDef="let row; let i = index; columns: displayedColumns" (click)="navigateId(i)"></mat-row>
+        <mat-footer-row *matFooterRowDef="['footerPagination']" [hidden]="tableData.data.length === 0">
+        </mat-footer-row>
+    </mat-table>
+</div>
